@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer"
+    android:layout_width="match_parent"
+    tools:openDrawer="end"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/toolbar"
+            tools:ignore="MissingConstraints" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="65dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+
+            android:orientation="horizontal">
+            <LinearLayout
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/headOfficer"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:clickable="true"
+                    android:src="@drawable/gps"/>
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:text="தலைமை வளாக பொறுப்பாளர்"
+                    android:textAlignment="center"/>
+
+                <ImageView
+                    android:id="@+id/electricity"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:clickable="true"
+                    android:src="@drawable/plug_wire"/>
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:text="மின் துறை"
+                    android:textAlignment="center"/>
+
+                <ImageView
+                    android:id="@+id/gasId"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:clickable="true"
+                    android:src="@drawable/gas"/>
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:text="பாரத் காஸ்"
+                    android:textAlignment="center"/>
+
+                <ImageView
+                    android:id="@+id/issueTracking"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:clickable="true"
+                    android:src="@drawable/ticket"/>
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:text="Issue Tracking"
+                    android:textAlignment="center"/>
+            </LinearLayout>
+            <LinearLayout
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/water"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:clickable="true"
+                    android:src="@drawable/water_drop"/>
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:text="தண்ணிர் மற்றும் 40dpகுடிநீர்"
+                    android:textAlignment="center"/>
+
+                <ImageView
+                    android:id="@+id/sanitation"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:clickable="true"
+                    android:src="@drawable/sanitation"/>
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:text="சுகாதாரம் மற்றும் துப்பரவு்"
+                    android:textAlignment="center"/>
+
+                <ImageView
+                    android:id="@+id/kycid"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:clickable="true"
+                    android:src="@drawable/kycicon"/>
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:text="KYC Form"
+                    android:textAlignment="center"/>
+
+                <ImageView
+                    android:id="@+id/officeid"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:clickable="true"
+                    android:src="@drawable/archive"/>
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:text="Association Office"
+                    android:textAlignment="center"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/navigationbar"
+        app:menu="@menu/menu_item"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/header"
+        />
+</androidx.drawerlayout.widget.DrawerLayout>
