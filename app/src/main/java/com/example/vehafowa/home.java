@@ -190,18 +190,18 @@ public class home extends AppCompatActivity implements  NavigationView.OnNavigat
         switch(menuItem.getItemId())
         {
             case R.id.home:
-                Toast.makeText(getApplicationContext(),"Home",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(),"Home",Toast.LENGTH_SHORT).show();
                 nextActivity = new Intent(this,home.class);
                 startActivity(nextActivity);
                 finish();
                 break;
             case R.id.about:
-                Toast.makeText(getApplicationContext(),"About Us",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(),"About Us",Toast.LENGTH_SHORT).show();
                 nextActivity = new Intent(this,AboutUs.class);
                 startActivity(nextActivity);
                 break;
             case R.id.circular:
-                Toast.makeText(getApplicationContext(),"Disclaimer: Currently the Circular activity is suspended temporarily, will be available from next update.",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(),"Disclaimer: Currently the Circular activity is suspended temporarily, will be available from next update.",Toast.LENGTH_SHORT).show();
                 AlertDialog.Builder dialog=new AlertDialog.Builder(this);
                 dialog.setMessage("visit : www.myvehafowa.org/circulars/");
                 dialog.setTitle("View the circular from website");
@@ -225,7 +225,7 @@ public class home extends AppCompatActivity implements  NavigationView.OnNavigat
                 alertDialog.show();
                 break;
             case R.id.issue:
-                Toast.makeText(getApplicationContext(),"Issue Tracking",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(),"Issue Tracking",Toast.LENGTH_SHORT).show();
                 dialog = new AlertDialog.Builder(this);
                 dialog.setMessage("directing to : www.myvehafowa.org/issue-tracking/");
                 dialog.setTitle("To view the issue tracking from website");
@@ -249,7 +249,7 @@ public class home extends AppCompatActivity implements  NavigationView.OnNavigat
                 alertDialog.show();
                 break;
             case R.id.kyc:
-                Toast.makeText(getApplicationContext(),"KYC",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(),"KYC",Toast.LENGTH_SHORT).show();
                 dialog = new AlertDialog.Builder(this);
                 dialog.setMessage("directing to : www.myvehafowa.org/kyc");
                 dialog.setTitle("View the kyc form from website");
@@ -272,10 +272,33 @@ public class home extends AppCompatActivity implements  NavigationView.OnNavigat
                 alertDialog.show();
                 break;
             case R.id.gallery:
-                Toast.makeText(getApplicationContext(),"Gallery",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(),"Gallery",Toast.LENGTH_SHORT).show();
+                dialog = new AlertDialog.Builder(this);
+                dialog.setMessage("directing to : https://www.myvehafowa.org/gallery/");
+                dialog.setTitle("To View the gallery form from website");
+                dialog.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(getApplicationContext(),"please wait...",Toast.LENGTH_SHORT).show();
+                        Uri urluri = Uri.parse("https://www.myvehafowa.org/gallery/");
+                        Intent launchbrowser = new Intent(Intent.ACTION_VIEW,urluri);
+                        startActivity(launchbrowser);
+                    }
+                });
+                dialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //Toast.makeText(getApplicationContext(),"please wait for other update",Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                });
+                alertDialog = dialog.create();
+                alertDialog.show();
                 break;
             case R.id.contact:
-                Toast.makeText(getApplicationContext(),"Contact",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(),"Contact",Toast.LENGTH_SHORT).show();
+                nextActivity = new Intent(this,vehaCon.class);
+                startActivity(nextActivity);
                 break;
         }
         return false;
