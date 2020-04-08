@@ -87,7 +87,9 @@ public class home extends AppCompatActivity implements  NavigationView.OnNavigat
         waterDept.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"Clicked Department of water",Toast.LENGTH_SHORT).show();
+               // Toast.makeText(getApplicationContext(),"Clicked Department of water",Toast.LENGTH_SHORT).show();
+                nextActivity = new Intent(home.this,waterResource.class);
+                startActivity(nextActivity);
             }
         });
 
@@ -95,7 +97,9 @@ public class home extends AppCompatActivity implements  NavigationView.OnNavigat
         electricityDept.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"Clicked Department of Electricity",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(),"Clicked Department of Electricity",Toast.LENGTH_SHORT).show();
+                nextActivity = new Intent(home.this,electricityResource.class);
+                startActivity(nextActivity);
             }
         });
 
@@ -177,7 +181,27 @@ public class home extends AppCompatActivity implements  NavigationView.OnNavigat
         officsSection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"Clicked Office",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(),"Clicked Office",Toast.LENGTH_SHORT).show();
+                dialog = new AlertDialog.Builder(home.this);
+                dialog.setMessage("directing to : https://www.myvehafowa.org/association-office/");
+                dialog.setTitle("View the Association office from website");
+                dialog.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(getApplicationContext(),"Visit myvehafowa.org",Toast.LENGTH_SHORT).show();
+                        Uri urluri = Uri.parse("https://www.myvehafowa.org/association-office/");
+                        Intent launchbrowser = new Intent(Intent.ACTION_VIEW,urluri);
+                        startActivity(launchbrowser);
+                    }
+                });
+                dialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(getApplicationContext(),"please wait for other update",Toast.LENGTH_SHORT).show();
+                    }
+                });
+                alertDialog = dialog.create();
+                alertDialog.show();
             }
         });
         //_________________________________________________________________________________________________________________
