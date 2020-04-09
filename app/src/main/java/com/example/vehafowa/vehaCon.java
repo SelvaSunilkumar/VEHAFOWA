@@ -13,9 +13,13 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
+
+import org.w3c.dom.Text;
 
 public class vehaCon extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -24,6 +28,10 @@ public class vehaCon extends AppCompatActivity implements NavigationView.OnNavig
     private NavigationView navigationView;
     private ActionBarDrawerToggle toggle;
 
+    private TextView caller1;
+    private TextView caller2;
+
+    Intent callnext;
     Intent nextActivity;
 
     @SuppressLint("RestrictedApi")
@@ -31,6 +39,28 @@ public class vehaCon extends AppCompatActivity implements NavigationView.OnNavig
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_veha_con);
+
+
+
+        caller1 = findViewById(R.id.caller1);
+        caller1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                callnext = new Intent(Intent.ACTION_DIAL);
+                callnext.setData(Uri.parse("tel:04524243325"));
+                startActivity(callnext);
+            }
+        });
+
+        caller2 = findViewById(R.id.caller2);
+        caller2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                callnext = new Intent(Intent.ACTION_DIAL);
+                callnext.setData(Uri.parse("tel:04524243325"));
+                startActivity(callnext);
+            }
+        });
 
         drawerLayout = findViewById(R.id.drawer);
         toolbar = findViewById(R.id.toolbar);
