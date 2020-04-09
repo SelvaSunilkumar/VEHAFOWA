@@ -7,11 +7,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
@@ -23,13 +26,49 @@ public class electricityResource extends AppCompatActivity implements Navigation
     private NavigationView navigationView;
     private ActionBarDrawerToggle toggle;
 
+    private TextView calle1;
+    private TextView calle2;
+    private TextView calle3;
+
+    Intent callIncharge;
     Intent nextActivity;
 
+    @SuppressLint("RestrictedApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_electricity_resource);
 
+
+        calle1 = findViewById(R.id.caller1);
+        calle1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                callIncharge = new Intent(Intent.ACTION_DIAL);
+                callIncharge.setData(Uri.parse("tel:9842185250"));
+                startActivity(callIncharge);
+            }
+        });
+
+        calle2 = findViewById(R.id.caller2);
+        calle2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                callIncharge = new Intent(Intent.ACTION_DIAL);
+                callIncharge.setData(Uri.parse("tel:9865214289"));
+                startActivity(callIncharge);
+            }
+        });
+
+        calle3 = findViewById(R.id.caller3);
+        calle3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                callIncharge = new Intent(Intent.ACTION_DIAL);
+                callIncharge.setData(Uri.parse("tel:7867010563"));
+                startActivity(callIncharge);
+            }
+        });
 
         drawerLayout = findViewById(R.id.drawer);
         toolbar = findViewById(R.id.toolbar);

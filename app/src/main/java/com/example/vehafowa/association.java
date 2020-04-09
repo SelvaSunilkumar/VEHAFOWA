@@ -14,51 +14,199 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class home extends AppCompatActivity implements  NavigationView.OnNavigationItemSelectedListener{
+import java.lang.reflect.Member;
 
-    //----------------------------------------------------------------------------------------------
+public class association extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-
-
-
-    //....................... Home activity - contains menu of all activities ......................
-
-
-
-    //----------------------------------------------------------------------------------------------
     private DrawerLayout drawerLayout;
     private Toolbar toolbar;
     private NavigationView navigationView;
     private ActionBarDrawerToggle toggle;
 
-    //---------------------------- import all the views available in xml code -----------------------
-    private ImageView headOffice;
-    private ImageView waterDept;
-    private ImageView electricityDept;
-    private ImageView sanitationDept;
-    private ImageView gasDept;
-    private ImageView kycSection;
-    private ImageView issuetrack;
-    private ImageView officsSection;
+    private TextView Contact1;
+    private TextView Contact2;
+    private TextView MaintainanceFee;
+    private TextView EntryFee;
+    private TextView EntryRules;
+    private TextView OnlinePayment;
+    private TextView MemberList;
 
-    //-----------------------------------------------------------------------------------------------------------------
-
-    public Intent nextActivity;
-    public AlertDialog.Builder dialog;
-    public AlertDialog alertDialog;
-
-    //-----------------------------------------------------------------------------------------------------------------
+    Intent nextActivity;
 
     @SuppressLint("RestrictedApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_association);
+
+        //------------------------------------------------------------------------------------------
+
+        Contact1 = findViewById(R.id.contact1);
+        Contact1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent CallOffice = new Intent(Intent.ACTION_DIAL);
+                CallOffice.setData(Uri.parse("tel:04522372485"));
+                startActivity(CallOffice);
+            }
+        });
+
+        Contact2 =findViewById(R.id.contact2);
+        Contact2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent CallOffice = new Intent(Intent.ACTION_DIAL);
+                CallOffice.setData(Uri.parse("tel:04524243325"));
+                startActivity(CallOffice);
+            }
+        });
+
+        MaintainanceFee = findViewById(R.id.maintainanceFees);
+        MaintainanceFee.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder dialog=new AlertDialog.Builder(association.this);
+                dialog.setMessage("visit : https://www.myvehafowa.org/rules-for-maintenance-fee-payment/");
+                dialog.setTitle("View the Rules for Maintenance fee payment from website");
+                dialog.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(getApplicationContext(),"please wait...",Toast.LENGTH_SHORT).show();
+                        Uri urluri = Uri.parse("https://www.myvehafowa.org/rules-for-maintenance-fee-payment/");
+                        Intent launchbrowser = new Intent(Intent.ACTION_VIEW,urluri);
+                        startActivity(launchbrowser);
+                    }
+                });
+                dialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //Toast.makeText(getApplicationContext(),"",Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                });
+                AlertDialog alertDialog = dialog.create();
+                alertDialog.show();
+            }
+        });
+
+        EntryFee = findViewById(R.id.entryFee);
+        EntryFee.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder dialog=new AlertDialog.Builder(association.this);
+                dialog.setMessage("visit : https://www.myvehafowa.org/entry-fee-detail/");
+                dialog.setTitle("View the Entry fee detail from website");
+                dialog.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(getApplicationContext(),"please wait...",Toast.LENGTH_SHORT).show();
+                        Uri urluri = Uri.parse("https://www.myvehafowa.org/entry-fee-detail/");
+                        Intent launchbrowser = new Intent(Intent.ACTION_VIEW,urluri);
+                        startActivity(launchbrowser);
+                    }
+                });
+                dialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //Toast.makeText(getApplicationContext(),"",Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                });
+                AlertDialog alertDialog = dialog.create();
+                alertDialog.show();
+            }
+        });
+
+        EntryRules = findViewById(R.id.rulesEntry);
+        EntryRules.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder dialog=new AlertDialog.Builder(association.this);
+                dialog.setMessage("visit : https://www.myvehafowa.org/rules-for-entry-and-exit-2/");
+                dialog.setTitle("View the Rules for Entry and Exit details from website");
+                dialog.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(getApplicationContext(),"please wait...",Toast.LENGTH_SHORT).show();
+                        Uri urluri = Uri.parse("https://www.myvehafowa.org/rules-for-entry-and-exit-2/");
+                        Intent launchbrowser = new Intent(Intent.ACTION_VIEW,urluri);
+                        startActivity(launchbrowser);
+                    }
+                });
+                dialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //Toast.makeText(getApplicationContext(),"",Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                });
+                AlertDialog alertDialog = dialog.create();
+                alertDialog.show();
+            }
+        });
+
+        OnlinePayment = findViewById(R.id.onlinePay);
+        OnlinePayment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder dialog=new AlertDialog.Builder(association.this);
+                dialog.setMessage("visit : https://www.myvehafowa.org/online-payment-details/");
+                dialog.setTitle("View the Online Payement details from website");
+                dialog.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(getApplicationContext(),"please wait...",Toast.LENGTH_SHORT).show();
+                        Uri urluri = Uri.parse("https://www.myvehafowa.org/online-payment-details/");
+                        Intent launchbrowser = new Intent(Intent.ACTION_VIEW,urluri);
+                        startActivity(launchbrowser);
+                    }
+                });
+                dialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //Toast.makeText(getApplicationContext(),"",Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                });
+                AlertDialog alertDialog = dialog.create();
+                alertDialog.show();
+            }
+        });
+
+        MemberList = findViewById(R.id.list);
+        MemberList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder dialog=new AlertDialog.Builder(association.this);
+                dialog.setMessage("visit : https://www.myvehafowa.org/e-c-member-list/");
+                dialog.setTitle("View the E.C.Member -List from website");
+                dialog.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(getApplicationContext(),"please wait...",Toast.LENGTH_SHORT).show();
+                        Uri urluri = Uri.parse("https://www.myvehafowa.org/e-c-member-list/");
+                        Intent launchbrowser = new Intent(Intent.ACTION_VIEW,urluri);
+                        startActivity(launchbrowser);
+                    }
+                });
+                dialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //Toast.makeText(getApplicationContext(),"",Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                });
+                AlertDialog alertDialog = dialog.create();
+                alertDialog.show();
+            }
+        });
+
+        //------------------------------------------------------------------------------------------
 
         drawerLayout = findViewById(R.id.drawer);
         toolbar = findViewById(R.id.toolbar);
@@ -71,148 +219,10 @@ public class home extends AppCompatActivity implements  NavigationView.OnNavigat
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
-
-        //*****************************************************************************************************************
-
-
-        headOffice = findViewById(R.id.headOfficer);
-        headOffice.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"Clicked Head officer",Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        waterDept = findViewById(R.id.water);
-        waterDept.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-               // Toast.makeText(getApplicationContext(),"Clicked Department of water",Toast.LENGTH_SHORT).show();
-                nextActivity = new Intent(home.this,waterResource.class);
-                startActivity(nextActivity);
-            }
-        });
-
-        electricityDept = findViewById(R.id.electricity);
-        electricityDept.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Toast.makeText(getApplicationContext(),"Clicked Department of Electricity",Toast.LENGTH_SHORT).show();
-                nextActivity = new Intent(home.this,electricityResource.class);
-                startActivity(nextActivity);
-            }
-        });
-
-        sanitationDept = findViewById(R.id.sanitation);
-        sanitationDept.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"Clicked Department of Sanitation",Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        gasDept = findViewById(R.id.gasId);
-        gasDept.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"Clicked Department of Petroleum",Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        kycSection = findViewById(R.id.kycid);
-        kycSection.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"Clicked portal for KYC",Toast.LENGTH_SHORT).show();
-
-                dialog = new AlertDialog.Builder(home.this);
-                dialog.setMessage("directing to : www.myvehafowa.org/kyc");
-                dialog.setTitle("View the kyc form from website");
-                dialog.setPositiveButton("YES", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(getApplicationContext(),"Visit myvehafowa.org",Toast.LENGTH_SHORT).show();
-                        Uri urluri = Uri.parse("http://project.tce.edu:6543/login?");
-                        Intent launchbrowser = new Intent(Intent.ACTION_VIEW,urluri);
-                        startActivity(launchbrowser);
-                    }
-                });
-                dialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(getApplicationContext(),"please wait for other update",Toast.LENGTH_SHORT).show();
-                    }
-                });
-                alertDialog = dialog.create();
-                alertDialog.show();
-            }
-        });
-
-        issuetrack = findViewById(R.id.issueTracking);
-        issuetrack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"Clicked portal of Issue Tracking",Toast.LENGTH_SHORT).show();
-                dialog = new AlertDialog.Builder(home.this);
-                dialog.setMessage("directing to : www.myvehafowa.org/issue-tracking/");
-                dialog.setTitle("To view the issue tracking from website");
-                dialog.setPositiveButton("YES", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(getApplicationContext(),"please wait...",Toast.LENGTH_SHORT).show();
-                        Uri urluri = Uri.parse("https://www.myvehafowa.org/issue-tracking/");
-                        Intent launchbrowser = new Intent(Intent.ACTION_VIEW,urluri);
-                        startActivity(launchbrowser);
-                    }
-                });
-                dialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        //Toast.makeText(getApplicationContext(),"please wait for other update",Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-                });
-                alertDialog = dialog.create();
-                alertDialog.show();
-            }
-        });
-
-        officsSection = findViewById(R.id.officeid);
-        officsSection.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Toast.makeText(getApplicationContext(),"Clicked Office",Toast.LENGTH_SHORT).show();
-                nextActivity = new Intent(home.this,association.class);
-                startActivity(nextActivity);
-                /*dialog = new AlertDialog.Builder(home.this);
-                dialog.setMessage("directing to : https://www.myvehafowa.org/association-office/");
-                dialog.setTitle("View the Association office from website");
-                dialog.setPositiveButton("YES", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(getApplicationContext(),"Visit myvehafowa.org",Toast.LENGTH_SHORT).show();
-                        Uri urluri = Uri.parse("https://www.myvehafowa.org/association-office/");
-                        Intent launchbrowser = new Intent(Intent.ACTION_VIEW,urluri);
-                        startActivity(launchbrowser);
-                    }
-                });
-                dialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(getApplicationContext(),"please wait for other update",Toast.LENGTH_SHORT).show();
-                    }
-                });
-                alertDialog = dialog.create();
-                alertDialog.show();*/
-            }
-        });
-        //_________________________________________________________________________________________________________________
     }
-
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-
         switch(menuItem.getItemId())
         {
             case R.id.home:

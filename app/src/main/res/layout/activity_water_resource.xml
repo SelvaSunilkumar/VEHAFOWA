@@ -43,6 +43,8 @@
             android:layout_height="wrap_content"
             android:text="Mr. Pandi\n97884 72138"
             android:textSize="18dp"
+            android:clickable="true"
+            android:id="@+id/caller"
             android:textAlignment="center"/>
     </LinearLayout>
 

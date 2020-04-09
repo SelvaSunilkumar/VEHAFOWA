@@ -13,6 +13,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
@@ -25,6 +27,8 @@ public class waterResource extends AppCompatActivity implements NavigationView.O
     private NavigationView navigationView;
     private ActionBarDrawerToggle toggle;
 
+    private TextView Caller;
+
     public Intent nextActivity;
 
 
@@ -33,6 +37,17 @@ public class waterResource extends AppCompatActivity implements NavigationView.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_water_resource);
+
+
+        Caller = findViewById(R.id.caller);
+        Caller.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent callerpad = new Intent(Intent.ACTION_DIAL);
+                callerpad.setData(Uri.parse("tel:9788472138"));
+                startActivity(callerpad);
+            }
+        });
 
         drawerLayout = findViewById(R.id.drawer);
         toolbar = findViewById(R.id.toolbar);

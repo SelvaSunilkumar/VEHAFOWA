@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/drawer"
+    tools:openDrawer="end"
+    android:layout_height="match_parent"
+    tools:context=".association">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/toolbar"
+            tools:ignore="MissingConstraints" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="65dp"
+        android:layout_weight="1">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Association Office"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:textAlignment="center"/>
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="140dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="8">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="For enquiry contact\nE-Block, Ground Floor, Dhanya Sector,\n84, TPK Road, Andalpuram, Madurai-625 003.\n\nEMail-ID: vehafowa@gmail.com"
+                android:textAlignment="center"
+                android:textSize="18sp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Phone\n 0452-2372485"
+                android:id="@+id/contact1"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:clickable="true"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="0452-4243325"
+                android:id="@+id/contact2"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:clickable="true"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Rules for Maintenance Fee Payment"
+                android:id="@+id/maintainanceFees"
+                android:textStyle="bold"
+                android:layout_marginLeft="15dp"
+                android:textSize="18sp"
+                android:drawableLeft="@drawable/arrow"
+                android:clickable="true"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Entry Fee Detail"
+                android:id="@+id/entryFee"
+                android:textStyle="bold"
+                android:layout_marginLeft="15dp"
+                android:textSize="18sp"
+                android:drawableLeft="@drawable/arrow"
+                android:clickable="true"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                android:text="Rules for Entry and Exit"
+                android:id="@+id/rulesEntry"
+                android:layout_marginLeft="15dp"
+                android:textSize="18sp"
+                android:drawableLeft="@drawable/arrow"
+                android:clickable="true"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                android:text="Online Payment Details"
+                android:id="@+id/onlinePay"
+                android:layout_marginLeft="15dp"
+                android:textSize="18sp"
+                android:drawableLeft="@drawable/arrow"
+                android:clickable="true"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                android:text="E.C.Member – List"
+                android:id="@+id/list"
+                android:layout_marginLeft="15dp"
+                android:textSize="18sp"
+                android:drawableLeft="@drawable/arrow"
+                android:clickable="true"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/navigationbar"
+        app:menu="@menu/menu_item"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/header"
+        />
+
+</androidx.drawerlayout.widget.DrawerLayout>

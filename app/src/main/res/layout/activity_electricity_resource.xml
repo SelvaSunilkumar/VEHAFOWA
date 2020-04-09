@@ -37,12 +37,38 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="140dp">
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Mr. Ramar \n 98421 85250 \n\n Mr. Kannan \n 98652 14289 \n\nOn Duty Person \n 78670 10563"
-            android:textSize="18dp"
-            android:textAlignment="center"/>
+            android:orientation="vertical"
+            android:layout_weight="3">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mr. Ramar\n98421 85250"
+                android:textAlignment="center"
+                android:textSize="18dp"
+                android:clickable="true"
+                android:id="@+id/caller1"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mr. Kannan\n98652 14289"
+                android:textAlignment="center"
+                android:textSize="18dp"
+                android:clickable="true"
+                android:id="@+id/caller2"
+                android:layout_marginTop="15dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="On Duty Person \n 78670 10563"
+                android:textAlignment="center"
+                android:textSize="18dp"
+                android:clickable="true"
+                android:id="@+id/caller3"
+                android:layout_marginTop="15dp"/>
+        </LinearLayout>
     </ScrollView>
 
     <com.google.android.material.navigation.NavigationView

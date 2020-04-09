@@ -38,12 +38,34 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="140dp">
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="E-Block, Ground Floor, Dhanya Sector,\n84, TPK Road, Andalpuram,Madurai-625 003.\nE-Mail-vehafowa@gmail.com\nPhone No:0452-4243325, 0452-4243325"
-            android:textSize="18dp"
-            android:textAlignment="center"/>
+            android:orientation="vertical"
+            android:layout_weight="3">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="E-Block, Ground Floor, Dhanya Sector,\n84, TPK Road, Andalpuram,Madurai-625 003.\nE-Mail-vehafowa@gmail.com\"
+                android:textSize="18dp"
+                android:textAlignment="center"/>
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Phone No:\n0452-4243325,"
+                android:textSize="18dp"
+                android:id="@+id/caller1"
+                android:textAlignment="center"/>
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0452-4243325"
+                android:textSize="18dp"
+                android:id="@+id/caller2"
+                android:textAlignment="center"/>
+        </LinearLayout>
     </ScrollView>
 
     <com.google.android.material.navigation.NavigationView
