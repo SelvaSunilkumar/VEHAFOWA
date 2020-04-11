@@ -101,7 +101,7 @@
                 <TextView
                     android:layout_width="120dp"
                     android:layout_height="40dp"
-                    android:text="தண்ணிர் மற்றும் 40dpகுடிநீர்"
+                    android:text="தண்ணிர் மற்றும் குடிநீர்"
                     android:textAlignment="center"/>
 
                 <ImageView
