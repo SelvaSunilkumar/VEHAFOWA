@@ -42,9 +42,9 @@
                     android:clickable="true"
                     android:src="@drawable/gps"/>
                 <TextView
-                    android:layout_width="120dp"
+                    android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:text="தலைமை வளாக பொறுப்பாளர்"
+                    android:text="தலைமை வளாக\nபொறுப்பாளர்"
                     android:textAlignment="center"/>
 
                 <ImageView
@@ -55,7 +55,7 @@
                     android:clickable="true"
                     android:src="@drawable/plug_wire"/>
                 <TextView
-                    android:layout_width="120dp"
+                    android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:text="மின் துறை"
                     android:textAlignment="center"/>
@@ -68,7 +68,7 @@
                     android:clickable="true"
                     android:src="@drawable/gas"/>
                 <TextView
-                    android:layout_width="120dp"
+                    android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:text="பாரத் காஸ்"
                     android:textAlignment="center"/>
@@ -81,7 +81,7 @@
                     android:clickable="true"
                     android:src="@drawable/ticket"/>
                 <TextView
-                    android:layout_width="120dp"
+                    android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:text="Issue Tracking"
                     android:textAlignment="center"/>
@@ -99,9 +99,9 @@
                     android:clickable="true"
                     android:src="@drawable/water_drop"/>
                 <TextView
-                    android:layout_width="120dp"
+                    android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:text="தண்ணிர் மற்றும் குடிநீர்"
+                    android:text="தண்ணிர் மற்றும்\nகுடிநீர்"
                     android:textAlignment="center"/>
 
                 <ImageView
@@ -112,9 +112,9 @@
                     android:clickable="true"
                     android:src="@drawable/sanitation"/>
                 <TextView
-                    android:layout_width="120dp"
+                    android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:text="சுகாதாரம் மற்றும் துப்பரவு்"
+                    android:text="சுகாதாரம் மற்றும்\nதுப்பரவு்"
                     android:textAlignment="center"/>
 
                 <ImageView
@@ -125,7 +125,7 @@
                     android:clickable="true"
                     android:src="@drawable/kycicon"/>
                 <TextView
-                    android:layout_width="120dp"
+                    android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:text="KYC Form"
                     android:textAlignment="center"/>
@@ -138,7 +138,7 @@
                     android:clickable="true"
                     android:src="@drawable/archive"/>
                 <TextView
-                    android:layout_width="120dp"
+                    android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:text="Association Office"
                     android:textAlignment="center"/>
